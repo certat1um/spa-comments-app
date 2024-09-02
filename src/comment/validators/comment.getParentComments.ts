@@ -1,10 +1,6 @@
-import {
-  joiOrder,
-  joiPagination,
-  JoiSchemaInterface,
-} from '../../middlewares/validator';
+import { joiOrder, joiPagination } from '../../middlewares/validator';
 
-export const getParentComments: JoiSchemaInterface = {
+export const getParentComments = {
   body: {
     pagination: joiPagination,
     order: joiOrder,

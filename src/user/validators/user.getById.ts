@@ -1,7 +1,7 @@
 import Joi from 'joi';
-import { JoiSchemaInterface } from '../../middlewares/validator';
+import { Joi.Schema } from '../../middlewares/validator';
 
-export const getById: JoiSchemaInterface = {
+export const getById: Joi.Schema = {
   params: {
     id: Joi.string().uuid().required(),
   },

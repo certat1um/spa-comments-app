@@ -1,7 +1,6 @@
 import Joi from 'joi';
-import { JoiSchemaInterface } from '../../middlewares/validator';
 
-export const makeReply: JoiSchemaInterface = {
+export const makeReply = {
   params: {
     commentId: Joi.string().uuid().required(),
   },

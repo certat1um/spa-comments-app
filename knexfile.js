@@ -1,22 +1,15 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const {
-  POSTGRES_HOST,
-  POSTGRES_PORT,
-  POSTGRES_PASS,
-  POSTGRES_USER,
-  POSTGRES_DB,
-} = process.env;
+const { DATABASE_URL } = process.env;
 
 module.exports = {
-  client: 'postgres',
+  client: 'pg',
   connection: {
-    host: POSTGRES_HOST,
-    port: Number(POSTGRES_PORT),
-    user: POSTGRES_USER,
-    password: POSTGRES_PASS,
-    database: POSTGRES_DB,
+    connectionString: DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
   migrations: {
     directory: './database/migrations',

@@ -1,7 +1,7 @@
 import Joi from 'joi';
-import { JoiSchemaInterface } from '../../middlewares/validator';
+import { Joi.Schema } from '../../middlewares/validator';
 
-export const getBy: JoiSchemaInterface = {
+export const getBy: Joi.Schema = {
   body: {
     id: Joi.string().uuid().optional(),
     username: Joi.string().optional(),

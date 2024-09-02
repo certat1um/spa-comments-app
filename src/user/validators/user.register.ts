@@ -1,7 +1,7 @@
 import Joi from 'joi';
-import { JoiSchemaInterface } from '../../middlewares/validator';
+import { Joi.Schema } from '../../middlewares/validator';
 
-export const register: JoiSchemaInterface = {
+export const register: Joi.Schema = {
   body: {
     username: Joi.string().required(),
     email: Joi.string().email().required(),

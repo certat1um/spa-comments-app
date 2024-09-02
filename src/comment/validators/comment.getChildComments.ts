@@ -1,11 +1,7 @@
 import Joi from 'joi';
-import {
-  JoiSchemaInterface,
-  joiOrder,
-  joiPagination,
-} from '../../middlewares/validator';
+import { joiOrder, joiPagination } from '../../middlewares/validator';
 
-export const getChildComments: JoiSchemaInterface = {
+export const getChildComments = {
   params: {
     parentId: Joi.string().uuid().required(),
   },
