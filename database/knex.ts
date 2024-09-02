@@ -3,7 +3,13 @@ import { Model as ObjectionModel } from 'objection';
 // @ts-expect-error
 import knexConfiguration from '../knexfile';
 
-const knex = knexInstance(knexConfiguration as Knex.Config);
+let knex: knexInstance.Knex<any, unknown[]>;
+
+if (knexConfiguration.isLocal) {
+  knex = knexInstance(knexConfiguration.local as Knex.Config);
+} else {
+  knex = knexInstance(knexConfiguration.external as Knex.Config);
+}
 
 ObjectionModel.knex(knex);
 
