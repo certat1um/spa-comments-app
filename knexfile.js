@@ -14,7 +14,7 @@ const {
 module.exports = {
   isLocal: IS_LOCAL,
   local: {
-    client: 'pg',
+    client: 'postgresql',
     connection: {
       host: POSTGRES_HOST,
       port: POSTGRES_PORT,
@@ -29,7 +29,7 @@ module.exports = {
     seeds: { directory: './database/seeds' },
   },
   external: {
-    client: 'pg',
+    client: 'postgresql',
     connection: {
       connectionString: DATABASE_URL,
       ssl: {
